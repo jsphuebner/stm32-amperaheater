@@ -61,8 +61,8 @@ static void Ms100Task(void)
    //This sets a fixed point value WITHOUT calling the parm_Change() function
    Param::SetFloat(Param::cpuload, cpuLoad / 10);
 
-   //heater->SetPower(power);
-   heater->SetTargetTemperature(Param::GetFloat(Param::targetemp));
+   heater->SetPower(power);
+   //heater->SetTargetTemperature(Param::GetFloat(Param::targetemp));
 
    if (power > 500)
       DigIo::pump.Set();
