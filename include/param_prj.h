@@ -46,18 +46,20 @@
    2. Temporary parameters (id = 0)
    3. Display values
  */
-//Next param id (increase when adding new parameter!): 3
-//Next value Id: 2005
+//Next param id (increase when adding new parameter!): 4
+//Next value Id: 2007
 /*              category     name         unit       min     max     default id */
 #define PARAM_LIST \
+    PARAM_ENTRY(CAT_HEAT,    maxpower,    "W",       0,      6000,   0,      3   ) \
+    PARAM_ENTRY(CAT_HEAT,    targetemp,   "°C",      0,      75,     0,      4   ) \
     PARAM_ENTRY(CAT_COMM,    canspeed,    CANSPEEDS, 0,      4,      2,      1   ) \
-    PARAM_ENTRY(CAT_COMM,    canperiod,   CANPERIODS,0,      1,      0,      2   ) \
-    PARAM_ENTRY(CAT_TEST,    testparam,   "Hz",      -100,   1000,   0,      0   ) \
     VALUE_ENTRY(opmode,      OPMODES, 2000 ) \
     VALUE_ENTRY(version,     VERSTR,  2001 ) \
     VALUE_ENTRY(lasterr,     errorListString,  2002 ) \
-    VALUE_ENTRY(testain,     "dig",   2003 ) \
-    VALUE_ENTRY(cpuload,     "%",     2004 )
+    VALUE_ENTRY(temperature, "°C",    2003 ) \
+    VALUE_ENTRY(tempraw,     "dig",   2004 ) \
+    VALUE_ENTRY(power,       "W",     2006 ) \
+    VALUE_ENTRY(cpuload,     "%",     2005 )
 
 
 /***** Enum String definitions *****/
@@ -66,8 +68,9 @@
 #define CANPERIODS   "0=100ms, 1=10ms"
 #define CAT_TEST     "Testing"
 #define CAT_COMM     "Communication"
+#define CAT_HEAT     "Heater"
 
-#define VERSTR STRINGIFY(4=VER-name)
+#define VERSTR STRINGIFY(4=VER)
 
 /***** enums ******/
 
